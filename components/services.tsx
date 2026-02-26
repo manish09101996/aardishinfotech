@@ -77,7 +77,7 @@ export default function Services({ data }: any) {
 
                 {/* RIGHT SLIDER */}
                 <div className="col-lg-6 accordian-slider-img">
-                  <Slider ref={sliderRef} {...settings}>
+                  <Slider {...settings}>
                     {services.map((item, index) => (
                       <div key={index} className="img-slide">
                         {item.image?.url && (
