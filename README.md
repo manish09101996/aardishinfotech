@@ -19,7 +19,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 Create a `.env.local` file with the WordPress REST API base URL before starting the app:
 
 ```env
-NEXT_PUBLIC_WP_API=https://wordpress.aardishinfotech.in/wp-json
+NEXT_PUBLIC_WP_API_URL=https://wordpress.aardishinfotech.in/wp-json
 ```
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
