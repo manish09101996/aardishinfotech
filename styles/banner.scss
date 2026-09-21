@@ -78,7 +78,10 @@
       color: #fff;
 
       @media (max-width: 767px) {
-        padding: 18px 30px;
+        padding: 16px 16px;
+        display: block;
+        width: 100%;
+        text-align: center;
       }
     }
 
@@ -98,6 +101,10 @@
       @media (max-width: 767px) {
         background: linear-gradient(45deg, #6335f0, #df9fff);
         padding: 18px 30px;
+        width: 100%;
+        display: block;
+        margin: 20px 0 0px 0;
+        text-align: center;
       }
 
       &::after {
