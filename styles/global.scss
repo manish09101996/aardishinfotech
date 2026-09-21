@@ -1,6 +1,20 @@
 body {
-  font-family: sans-serif;
+	 font-family: var(--font-inter), sans-serif;
   background: #fff;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+button {
+  font-family: var(--font-inter), sans-serif;
 }
 section.image-text ,section.values-section{
     background-color: #fff;
@@ -616,7 +630,7 @@ section.what-do-sec {
 .common-heading h4 {
     font-size: 40px;
     line-height: 48px;
-    font-family: Inter;
+  
     color: #270F5C;
     font-weight: 700;
 }
@@ -625,7 +639,7 @@ section.what-do-sec {
     text-transform: uppercase;
     color: #270F5C;
     font-size: 16px;
-    font-family: Inter;
+   
     letter-spacing: 2px;
     position: relative;
     display: inline-block;
@@ -664,7 +678,7 @@ section.what-do-sec {
     line-height: 26px;
     max-width: 50%;
     margin: auto;
-    font-family: Inter;
+
     margin-bottom: 40px;
 }
 
@@ -678,7 +692,7 @@ section.what-do-sec {
 }
 
 .service-box h3 {
-    font-family: Inter;
+   
     font-size: 24px;
     font-weight: 600;
     line-height: 30px;
@@ -691,7 +705,7 @@ section.what-do-sec {
     color: #6B6B6B;
     font-size: 18px;
     line-height: 26px;
-    font-family: Inter;
+
 }
 .service-box:hover img {
       transform: scale(1.1);
@@ -976,7 +990,7 @@ $color_8: #b66aff;
 	padding: 100px 0;
 	background: radial-gradient( circle at 85% 50%, rgba(143, 74, 255, 0.12), transparent 35% ), #fff;
 	color: $color_1;
-        font-family: 'Inter';
+       
 }
 .why-container {
 	width: min(1180px, calc(100% - 40px));
@@ -1376,7 +1390,7 @@ $color_5: #aaa3ba;
 		line-height: 1.08;
 		font-weight: 600;
 		letter-spacing: -1.5px;
-        font-family: 'Inter';
+      
 		span {
 			display: block;
 			background: linear-gradient( 90deg, #8b5cf6, #c084fc );
@@ -1391,7 +1405,7 @@ $color_5: #aaa3ba;
 		color: $color_2;
 		font-size: 16px;
 		line-height: 1.7;
-        font-family: 'Inter';
+
 	}
 }
 .process-label {
@@ -1405,7 +1419,7 @@ $color_5: #aaa3ba;
     letter-spacing: 4px;
     margin-bottom: 25px;
     background: rgba(124, 58, 237, 0.04);
-    font-family: 'Inter';
+   
 }
 .process-btn {
 	display: inline-flex;
@@ -1417,7 +1431,7 @@ $color_5: #aaa3ba;
 	background: linear-gradient( 100deg, #713cff, #bc73ff );
 	color: $color_1;
 	font-size: 16px;
-    font-family: 'Inter';
+    
 	font-weight: 500;
 	text-decoration: none;
 	box-shadow: 0 8px 30px rgba(124, 58, 237, 0.3);
@@ -1652,7 +1666,7 @@ $border-color_1: #c8a5fa;
 .process-detail-container {
 	width: min(1120px, calc(100% - 40px));
 	margin: 0 auto;
-    font-family: 'Inter';
+   
 }
 .process-heading {
 	max-width: 720px;
@@ -1980,7 +1994,7 @@ $border-color_1: rgba(173, 117, 255, .6);
 	padding: 100px 0;
 	background: radial-gradient( circle at 50% 0%, rgba(128, 62, 255, .2), transparent 45% ), #120a25;
 	color: $color_1;
-    font-family: 'Inter';
+    
 }
 .expect-container {
 	width: min(1100px, calc(100% - 40px));
@@ -2098,7 +2112,7 @@ $color_7: #5b2da1;
 	grid-template-columns: 1fr 1fr;
 	align-items: center;
 	gap: 80px;
-    font-family: 'Inter';
+    
 }
 .collaboration-content {
 	h2 {
@@ -2535,7 +2549,7 @@ $border-color_1: #9855f5;
 	grid-template-columns: .75fr 1.25fr;
 	gap: 70px;
 	align-items: center;
-    font-family: 'Inter';
+   
 }
 .contact-form-intro {
 	h2 {
@@ -2738,7 +2752,7 @@ $color_3: #aaa1ba;
 	padding: 100px 0;
 	background: radial-gradient( circle at 50% 0%, rgba(127, 61, 255, .18), transparent 45% ), #120a25;
 	color: $color_1;
-        font-family: 'Inter';
+        
 }
 .next-container {
 	width: min(1100px, calc(100% - 40px));
@@ -2848,7 +2862,7 @@ $border-color_2: #aa70f5;
 .faq-container {
 	width: min(850px, calc(100% - 40px));
 	margin: auto;
-        font-family: 'Inter';
+       
 }
 .faq-heading {
 	margin-bottom: 50px;
@@ -2997,7 +3011,7 @@ $border-left-color_1: transparent;
 	overflow: hidden;
 	background: radial-gradient( circle at 52% 0%, rgba(112, 35, 255, 0.35), transparent 32% ), radial-gradient( circle at 65% 90%, rgba(100, 25, 255, 0.30), transparent 35% ), linear-gradient( 115deg, #020207 0%, #060312 45%, #09001e 100% );
 	color: $color_1;
-	font-family: 'Inter';
+	
     padding-top: 110px;
 	&::before {
 		content: "";
@@ -3069,7 +3083,7 @@ $border-left-color_1: transparent;
 	gap: 25px;
 	flex-wrap: wrap;
     padding: 70px 0;
-    font-family: 'Inter';
+   
 }
 .contact-option {
 	display: flex;
@@ -3559,7 +3573,7 @@ $border-left-color_1: transparent;
 	max-width: 100%;
 	margin: auto;
 	isolation: isolate;
-	font-family: 'Inter';
+	
 }
 .hiw-glow {
 	position: absolute;
@@ -3990,7 +4004,7 @@ section.case-study-hero {
     padding-top: 160px;
     color: #fff;
     text-align: center;
-    font-family: 'Inter';
+
     margin-bottom: 70px;
     padding-bottom: 80px;
 }
@@ -4024,7 +4038,7 @@ section.case-study-hero h1 {
 }
 article.case-study-content {
     margin: auto;
-    font-family: 'Inter';
+   
 }
 
 h2.wp-block-heading {
@@ -4070,7 +4084,6 @@ section.case-study-content-section {
   position: sticky;
   top: 100px;
   align-self: start;
-FONT-FAMILY: 'Inter';
 }
 
 .toc-inner {

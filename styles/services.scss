@@ -9,7 +9,7 @@ h3 {
     text-transform: uppercase;
     color: #270F5C;
     font-size: 16px;
-    font-family: Inter;
+
     letter-spacing: 2px;
     position: relative;
     display: inline-block;
@@ -34,7 +34,7 @@ h3::before {
     -webkit-mask-source-type: auto, auto;
     mask-mode: match-source, match-source;
 }
-h4.title-txt {font-size: 40px;line-height: 48px;font-family: Inter;color: #270F5C;font-weight: 700;}
+h4.title-txt {font-size: 40px;line-height: 48px;color: #270F5C;font-weight: 700;}
 h4.title-txt strong {
     background: linear-gradient(90deg, #6335F0, #B97FFB);
     -webkit-background-clip: text;
@@ -48,7 +48,7 @@ h4.title-txt strong {
     line-height: 26px;
     max-width: 50%;
     margin: auto;
-    font-family: Inter;
+    
     margin-bottom: 40px;
     @media(max-width:767px){
          max-width: 100%;
@@ -89,7 +89,7 @@ h4.title-txt strong {
         font-size: 20px;
         font-weight: 500;
         line-height: 40px;
-        font-family: Inter;
+       
         @media(max-width:767px){
             font-size: 18px;
             line-height: 26px;
@@ -102,7 +102,7 @@ h4.title-txt strong {
         color: #6B6B6B;
         font-size: 18px;
         line-height: 24px;
-        font-family: Inter;
+       
         margin-bottom: 20px;
         @media(max-width:767px){
              font-size: 16px;
