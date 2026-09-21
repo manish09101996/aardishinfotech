@@ -41,7 +41,14 @@ export default function Banner({
               <span>{data.banner_highlight_text}</span>
             </h1>
 
-            <p>{data.banner_text}</p>
+          
+           <div className="banner-text">
+  <div
+    dangerouslySetInnerHTML={{
+      __html: data.banner_text
+    }}
+  />
+</div>
 
             <div className="buttons">
               <a href={data.demo_link} className="primary-button">
@@ -60,6 +67,7 @@ export default function Banner({
 
           <div className="col-sm-12 trust-logos">
             <h3>{data.trust_logos}</h3>
+            <p> {data.banner_logo_text} </p>
             <img src={data.logo_images?.url} alt="trust-logos" />
           </div>
         </div>
