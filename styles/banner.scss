@@ -1,20 +1,21 @@
 .banner {
-    padding: 80px 0;
-    background-image: url(/bg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 196px 0 72px;
-    color: #fff;
-    @media(max-width:767px){
-            padding: 145px 0 40px;
-    }
+  padding: 196px 0 72px;
+  background-image: url("/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
 
-    span.title-btn {
+  @media (max-width: 767px) {
+    padding: 145px 0 40px;
+  }
+
+  /* TOP TAG BUTTON */
+  span.title-btn {
     color: #fff;
     letter-spacing: 6px;
     text-transform: uppercase;
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     cursor: pointer;
     background: none;
     border: 1px solid #b279f933;
@@ -24,115 +25,148 @@
     font-weight: 600;
     display: inline-block;
     box-shadow: inset 0 0 0 1px #b279f933;
-    }
+  }
 
-    h1 {
+  /* HEADING */
+  h1 {
     margin: 20px 0;
     font-size: 51px;
     font-family: var(--font-lato), sans-serif;
-    FONT-WEIGHT: BOLD;
-    @media(max-width:767px){
-        font-size: 40px;
+    font-weight: bold;
+
+    @media (max-width: 767px) {
+      font-size: 40px;
     }
 
-    span{
-    background: linear-gradient(45deg, #6335F0, #DF9FFF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
+    span {
+      background: linear-gradient(45deg, #6335f0, #df9fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
     }
-}
- p {
-    font-family: 'Inter';
+  }
+
+  /* DESCRIPTION */
+  p {
+    font-family: "Inter", sans-serif;
     font-size: 18px;
     line-height: 26px;
     opacity: 0.8;
-     @media(max-width:767px){
-        font-size: 16px;
+
+    @media (max-width: 767px) {
+      font-size: 16px;
     }
-}
-.buttons {
+  }
+
+  /* BUTTONS */
+  .buttons {
     margin-top: 50px;
-        a.primary-button {
-        font-family: var(--font-be-vietnam), sans-serif;
-        text-transform: capitalize;
-        letter-spacing: 0;
+
+    a {
+      text-decoration: none;
+    }
+
+    .primary-button {
+      font-family: var(--font-be-vietnam), sans-serif;
+      text-transform: capitalize;
+      background: linear-gradient(45deg, #6335f0, #df9fff);
+      border-radius: 50px;
+      padding: 20px 35px;
+      font-size: 15.78px;
+      transition: all 0.5s ease;
+      color: #fff;
+
+      @media (max-width: 767px) {
+        padding: 16px 16px;
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .secondary-button {
+      position: relative;
+      padding: 18px 48px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff;
+      background: transparent;
+      border-radius: 999px;
+      cursor: pointer;
+      border: none;
+      z-index: 1;
+      margin-left: 20px;
+
+      @media (max-width: 767px) {
         background: linear-gradient(45deg, #6335f0, #df9fff);
-        border-radius: 50px;
-        padding: 20px 35px;
-        font-size: 15.78px;
-        transition: all .5s;
-        color: #fff;
-        text-decoration: unset;
-         @media(max-width:767px){
-                     padding: 18px 30px;
-                  }
+        padding: 18px 30px;
+        width: 100%;
+        display: block;
+        margin: 20px 0 0px 0;
+        text-align: center;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 2px;
+        background: linear-gradient(90deg, #6335f0, #df9fff);
+        -webkit-mask: linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        z-index: -1;
+
+        @media (max-width: 767px) {
+          display: none;
         }
-        a.secondary-button {
-                position: relative;
-                padding: 18px 48px;
-                font-size: 18px;
-                font-weight: 500;
-                color: #fff;
-                background: transparent;
-                border-radius: 999px;
-                cursor: pointer;
-                border: none;
-                z-index: 1;
-                text-decoration: unset;
-                margin-left: 20px;
-                  @media(max-width:767px){
-                     background: linear-gradient(45deg, #6335f0, #df9fff);
-                     padding: 18px 30px;
-                  }
-        }
-        a.secondary-button::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 2px;
-            background: linear-gradient(90deg, #6335F0, #DF9FFF);
-            -webkit-mask: linear-gradient(#000 0 0) content-box,
-            linear-gradient(#000 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            z-index: -1;
-            @media(max-width:767px){
-                display: none;
-            }
-        }
-}
-.banner-image {
-    text-align: right;
-    margin-top: 50px;
-    img{
-            width: 100%;
+      }
     }
-}
-.banner-content {
+  }
+
+  /* IMAGE */
+  .banner-image {
+
+
+    img {
+      height: auto;
+    }
+  }
+
+  /* CONTENT */
+  .banner-content {
     padding-right: 60px;
-    @media(max-width:767px){
-        padding-right: 15px;
+
+    @media (max-width: 767px) {
+      padding-right: 15px;
     }
-}
-.trust-logos {
+  }
+
+  /* TRUST LOGOS */
+  .trust-logos {
     margin-top: 110px;
     text-align: center;
-    @media(max-width:767px){
-         margin-top: 60px;
+
+    @media (max-width: 767px) {
+      margin-top: 60px;
     }
-     h3 {
-    margin-bottom: 33px;
-    font-size: 18px;
-    font-family: Inter;
-    line-height: 26px;
-}
-img{
-    width: 100%;
-}
-}
 
+    h3 {
+      margin-bottom: 0px;
+      font-size: 18px;
+      font-family: "Inter", sans-serif;
+      line-height: 26px;
+    }
+    p{
+    margin-top: 10px;
+    margin-bottom: 40px;
+    }
 
+    img {
+      width: 100%;
+    }
+  }
 }

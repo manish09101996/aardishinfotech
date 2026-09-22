@@ -3,11 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import "@/styles/header.scss";
-import Popup from "./popup";
+import Link from "next/link";
 
-
-export default function Header({ menu }: { menu: any[] }) {
-  const [open, setOpen] = useState(false);
+export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);   // ✅ menu
+ 
 
   return (
     <header className="header">
@@ -17,7 +17,7 @@ export default function Header({ menu }: { menu: any[] }) {
           {/* LOGO */}
           <div className="col-sm-3">
             <div className="logo">
-              <a href="/">
+              <Link href="/">
                 <Image
                   src="/logo.png"
                   width={162}
@@ -25,43 +25,43 @@ export default function Header({ menu }: { menu: any[] }) {
                   alt="Site Logo"
                   priority
                 />
-              </a>
+              </Link>
             </div>
           </div>
 
           {/* NAV */}
-          <div className={`col-sm-9 nav-wrapper ${open ? "open" : ""}`}>
+          <div className={`col-sm-9 nav-wrapper ${menuOpen ? "open" : ""}`}>
             <nav>
               <ul>
-                {menu?.map((item: any) => (
-                  <li key={item.id} className={item.classes}>
-                    <a href={item.url} onClick={() => setOpen(false)}>
+                <li><Link href="/about">About us</Link></li>
+                 <li><Link href="/services">Services </Link></li>
+                  <li><Link href="/how-it-works">How It Works</Link></li>
+                  <li><Link href="/case-studies">Case Study</Link></li>
+                    <li><Link href="/contact">Contact Us </Link></li>
+                {/* {menu?.map((item) => (
+                 <li key={`${item.id}-${item.url}`} className={item.classes}>
+                    <Link href={item.url} onClick={() => setMenuOpen(false)}>
                       {item.title}
-                    </a>
+                    </Link>
                   </li>
-                ))}
-                <li className="demo-button"> <button onClick={() => setOpen(true)}>
-        Book a Demo
-      </button></li>
+                ))} */}
+
+                {/* ✅ Demo Button */}
+                <li className="demo-button">
+                  <Link href="/contact">
+                   Get a free quote
+
+                  </Link>
+                </li>
+
               </ul>
             </nav>
           </div>
 
-
-      <Popup open={open} onClose={() => setOpen(false)}>
-        <h2>Get Connect with us</h2>
-        
-       <iframe
-    src="http://aardishinfotech.local/contact/"
-    width="100%"
-    height="500"
-    style={{ border: "0" }}
-  />
-      </Popup>
-          {/* HAMBURGER */}
+          
           <button
-            className={`hamburger ${open ? "active" : ""}`}
-            onClick={() => setOpen(!open)}
+            className={`hamburger ${menuOpen ? "active" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
             <span />

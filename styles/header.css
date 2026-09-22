@@ -25,7 +25,7 @@
 .header nav ul li.demo-button {
   margin-left: auto;
 }
-.header nav ul li a {
+.header nav ul li a { 
   color: #fff;
   text-decoration: none;
   font-weight: 500;

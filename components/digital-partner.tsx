@@ -10,37 +10,46 @@ export default function DigitalPartner() {
 
   /* COUNTER ANIMATION */
   useEffect(() => {
-    const target = 76;
-    const target1 = 984;
-    const duration = 1500;
+  const duration = 1800;
 
-    let start = 0;
-    let start1 = 0;
+  function animateCounter(
+    ref: React.RefObject<HTMLSpanElement | null>,
+    start: number,
+    end: number
+  ) {
+    let startTime: number | null = null;
 
-    const increment = target / (duration / 16);
-    const increment1 = target1 / (duration / 16);
+    function update(currentTime: number) {
+      if (!startTime) startTime = currentTime;
 
-    function updateCounter() {
-      start += increment;
-      start1 += increment1;
+      const progress = Math.min(
+        (currentTime - startTime) / duration,
+        1
+      );
 
-      if (countRef.current) {
-        countRef.current.textContent =
-          start < target ? Math.floor(start).toString() : target.toString();
+      const value = Math.floor(
+        start + (end - start) * progress
+      );
+
+      if (ref.current) {
+        ref.current.textContent = value.toString();
       }
 
-      if (countRef1.current) {
-        countRef1.current.textContent =
-          start1 < target1 ? Math.floor(start1).toString() : target1.toString();
-      }
-
-      if (start < target || start1 < target1) {
-        requestAnimationFrame(updateCounter);
+      if (progress < 1) {
+        requestAnimationFrame(update);
       }
     }
 
-    updateCounter();
-  }, []);
+    requestAnimationFrame(update);
+  }
+
+  // Happy Users: 1 → 76
+  animateCounter(countRef, 1, 76);
+
+  // Development Hours: 0 → 984
+  animateCounter(countRef1, 0, 984);
+
+}, []);
 
   /* IMAGE STACK ANIMATION */
   useEffect(() => {
@@ -84,12 +93,13 @@ export default function DigitalPartner() {
                         </span>
                       </span>
                     </h2>
-                    <p>14 days trial</p>
+                    <p>14 days support</p>
                   </div>
                   <div className="left-col-2">
                     <div className="counter">
-                      <span id="count">0</span><span className="plus">+</span>
-                    </div>
+                    <span ref={countRef}>1</span>
+                    <span className="plus">+</span>
+                  </div>
 
                     <p>happy users</p>
                     <div className="image-stack">
@@ -142,7 +152,8 @@ export default function DigitalPartner() {
                   </div>
                   <div className="col-right-2">
                     <div className="counter">
-                      <span id="count1">0</span><span className="plus">+</span>
+                      <span ref={countRef1}>0</span>
+                      <span className="plus">+</span>
                     </div>
 
                     <img src="/Prompt.png" />

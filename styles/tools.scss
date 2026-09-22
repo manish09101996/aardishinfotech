@@ -21,7 +21,7 @@ section.tools-section {
     }
     h3 {
         color: #fff;
-        font-family: Inter;
+        
         font-size: 40px;
         font-weight: 600;
         line-height: 48px;
@@ -40,7 +40,7 @@ section.tools-section {
         line-height: 26px;
         max-width: 80%;
         margin: auto;
-        font-family: Inter;
+       
         color: rgb(255 255 255 / 50%);
         @media(max-width:767px){
              max-width: 100%;
@@ -64,7 +64,7 @@ section.tools-section {
             span {
                 display: block;
                 font-size: 13px;
-                font-family: Inter;
+                
             }
             img {
                 margin: 0 auto 11px;
@@ -110,39 +110,83 @@ section.tools-section {
         }
     }
 }
+.tools-section {
+  .marquee {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
 
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: scroll-left 20s linear infinite;
+      will-change: transform;
+    }
 
+    &.reverse {
+      .marquee-track {
+        animation: scroll-right 20s linear infinite;
+      }
+    }
 
+    &:hover .marquee-track {
+      animation-play-state: paused;
+    }
+  }
 
+  .tool-card {
+    flex: 0 0 auto;
+    width: 160px;
+    margin-right: 20px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 12px;
+    background: #111;
+    color: #fff;
 
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 🔥 CRITICAL FIXES */
-.slick-list {
-  overflow: hidden !important;
+    span {
+      display: block;
+      font-size: 14px;
+    }
+  }
 }
 
-.slick-track {
-  display: flex !important;
-  flex-wrap: nowrap !important;
+/* Animations */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-.slick-slide {
-  height: auto;
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-.slick-slide > div {
-  display: flex;
+/* Responsive */
+@media (max-width: 768px) {
+  .tools-section {
+    .tool-card {
+      width: 120px;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
 }

@@ -1,11 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import "@/styles/tools.scss";
-
-const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
 export default function Tools({ data }: any) {
   const row1 = buildRow(data, "platform", "platform", 5);
@@ -14,6 +9,8 @@ export default function Tools({ data }: any) {
   return (
     <section className="tools-section">
       <div className="container">
+
+        {/* HEADING */}
         <div className="tools-content">
           <span className="subheading">{data.tools_subheading}</span>
           <h3>
@@ -24,26 +21,28 @@ export default function Tools({ data }: any) {
 
         {/* LEFT → RIGHT */}
         <div className="marquee">
-          <Slider {...settings}>
+          <div className="marquee-track">
             {row1.map((item, i) => (
               <SlideItem key={`row1-${i}`} item={item} />
             ))}
-          </Slider>
+          </div>
         </div>
 
         {/* RIGHT → LEFT */}
         <div className="marquee reverse">
-          <Slider {...settings} rtl>
+          <div className="marquee-track">
             {row2.map((item, i) => (
               <SlideItem key={`row2-${i}`} item={item} />
             ))}
-          </Slider>
+          </div>
         </div>
+
       </div>
     </section>
   );
 }
 
+/* Slide Card */
 function SlideItem({ item }: any) {
   return (
     <div className="tool-card">
@@ -53,6 +52,7 @@ function SlideItem({ item }: any) {
   );
 }
 
+/* ACF Data Builder */
 function buildRow(
   acf: any,
   imagePrefix: string,
@@ -62,37 +62,14 @@ function buildRow(
   const items: any[] = [];
 
   for (let i = 1; i <= count; i++) {
-    const image = acf[`${imagePrefix}_image_${i}`];
-    const name = acf[`${namePrefix}_name_${i}`];
+    const image = acf?.[`${imagePrefix}_image_${i}`];
+    const name = acf?.[`${namePrefix}_name_${i}`];
 
     if (image?.url) {
       items.push({ image, name });
     }
   }
 
-  // 👇 duplicate ONCE for seamless loop
+  // duplicate for seamless infinite loop
   return [...items, ...items];
 }
-
-const settings = {
-  infinite: true,
-  autoplay: true,
-  autoplaySpeed: 0,
-  speed: 12000,
-  cssEase: "linear",
-  slidesToShow: 5,
-  arrows: false,
-  dots: false,
-  pauseOnHover: false,
-  swipe: false,
-  touchMove: false,
-
-  responsive: [
-    {
-      breakpoint: 768, // mobile
-      settings: {
-        slidesToShow: 2,
-      },
-    },
-  ],
-};

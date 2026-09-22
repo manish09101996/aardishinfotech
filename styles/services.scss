@@ -9,7 +9,7 @@ h3 {
     text-transform: uppercase;
     color: #270F5C;
     font-size: 16px;
-    font-family: Inter;
+
     letter-spacing: 2px;
     position: relative;
     display: inline-block;
@@ -34,7 +34,7 @@ h3::before {
     -webkit-mask-source-type: auto, auto;
     mask-mode: match-source, match-source;
 }
-h4.title-txt {font-size: 40px;line-height: 48px;font-family: Inter;color: #270F5C;font-weight: 700;}
+h4.title-txt {font-size: 40px;line-height: 48px;color: #270F5C;font-weight: 700;}
 h4.title-txt strong {
     background: linear-gradient(90deg, #6335F0, #B97FFB);
     -webkit-background-clip: text;
@@ -48,7 +48,7 @@ h4.title-txt strong {
     line-height: 26px;
     max-width: 50%;
     margin: auto;
-    font-family: Inter;
+    
     margin-bottom: 40px;
     @media(max-width:767px){
          max-width: 100%;
@@ -59,22 +59,22 @@ h4.title-txt strong {
     border-bottom: 1px solid rgb(90 82 236 / 20%);
     position: relative;
     &:nth-child(1) .accordian-toggle-btn{
-        background-image: url(http://aardishinfotech.local/wp-content/uploads/2025/12/3dcube.png);
+        background-image: url(/3dcube.png);
     }
     &:nth-child(2) .accordian-toggle-btn{
-        background-image: url(http://aardishinfotech.local/wp-content/uploads/2025/12/triangle-4.png);
+        background-image: url(/triangle-4.png);
     }
     &:nth-child(3) .accordian-toggle-btn{
-        background-image: url(http://aardishinfotech.local/wp-content/uploads/2025/12/triangle-3.png);
+        background-image: url(/triangle-3.png);
     }
     &:nth-child(4) .accordian-toggle-btn{
-        background-image: url(http://aardishinfotech.local/wp-content/uploads/2025/12/triangle-2.png);
+        background-image: url(/triangle-2.png);
     }
     &:nth-child(5) .accordian-toggle-btn{
-        background-image: url(http://aardishinfotech.local/wp-content/uploads/2025/12/triangle-1.png);
+        background-image: url(/triangle-1.png);
     }
     &:nth-child(6) .accordian-toggle-btn{
-        background-image: url(http://aardishinfotech.local/wp-content/uploads/2025/12/triangle.png);
+        background-image: url(/triangle.png);
     }
     .accordian-toggle-btn {
         justify-content: space-between;
@@ -89,7 +89,7 @@ h4.title-txt strong {
         font-size: 20px;
         font-weight: 500;
         line-height: 40px;
-        font-family: Inter;
+       
         @media(max-width:767px){
             font-size: 18px;
             line-height: 26px;
@@ -102,7 +102,7 @@ h4.title-txt strong {
         color: #6B6B6B;
         font-size: 18px;
         line-height: 24px;
-        font-family: Inter;
+       
         margin-bottom: 20px;
         @media(max-width:767px){
              font-size: 16px;
@@ -117,7 +117,7 @@ h4.title-txt strong {
     position: absolute;
     right: 0;
     top: 30px;
-    background-image: url(http://aardishinfotech.local/wp-content/uploads/2025/12/Down_Arrow_3_.png);
+    background-image: url(/Down_Arrow_3_.png);
     background-repeat: no-repeat;
     background-position: center;
     transition: 1s all ease;
@@ -206,4 +206,135 @@ h4.title-txt strong {
 }
 .img-slide img {
     width: 100%;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* ===== Service Image Animation ===== */
+
+.accordian-slider-img {
+
+  .slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slider-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  .slide {
+    min-width: 100%;
+    flex-shrink: 0;
+  }
+
+  .animation-img-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 24px;
+  }
+
+  .animation-main-img,
+  .animation-hover-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    animation: none;
+  }
+
+  .animation-img-wrap.animate .animation-main-img {
+    animation: serviceMainFade 8s infinite ease-in-out;
+  }
+
+  .animation-img-wrap.animate .animation-hover-img {
+    animation: serviceHoverFade 8s infinite ease-in-out;
+  }
+
+  .animation-main-img {
+    position: relative;
+    z-index: 1;
+    animation: serviceMainFade 8s infinite ease-in-out;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  .animation-hover-img {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    opacity: 0;
+    animation: serviceHoverFade 8s infinite ease-in-out;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+}
+
+/* ===== Main Image ===== */
+
+@keyframes serviceMainFade {
+
+  0%,
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50%,
+  90% {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+/* ===== Hover Image ===== */
+
+@keyframes serviceHoverFade {
+
+  0%,
+  40% {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+
+  50%,
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+
 }
